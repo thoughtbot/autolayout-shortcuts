@@ -56,7 +56,6 @@ switch (figma.command) {
     figma.closePlugin()
     break;
   case "space between":
-    //TODO
     alignPrimaryAxis("SPACE_BETWEEN")
     figma.closePlugin()
     break;
@@ -173,12 +172,20 @@ function setHugContents(direction) {
 
 function setFixedSizing(direction) {
   figma.currentPage.selection.forEach(f => {
-    if (!f.parent.layoutMode) return
+    if (f.layoutMode !== "NONE") {
+      if (f.layoutMode == direction) {
+        f.primaryAxisSizingMode = "FIXED"
+      } else {
+        f.counterAxisSizingMode = "FIXED"
+      }
+    }
 
-    if (f.parent.layoutMode == direction) {
-      f.layoutGrow = 0;
-    } else {
-      f.layoutAlign = "INHERIT";
+    if (f.parent.layoutMode !== "NONE") {
+      if (f.parent.layoutMode == direction) {
+        f.layoutGrow = 0;
+      } else {
+        f.layoutAlign = "INHERIT";
+      }
     }
   })
 }
