@@ -1,0 +1,38 @@
+{
+  "name": "Autolayout Shortcuts",
+  "id": "1081298003197000387",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "menu": [
+    {"name": "Auto layout horizontal", "command": "horizontal"},
+    {"name": "Auto layout vertical", "command": "vertical"},
+
+    {"name": "Primary axis align start", "command": "primary align start"},
+    {"name": "Primary axis align end", "command": "primary align end"},
+    {"name": "Primary axis align center", "command": "primary align center"},
+
+    {"name": "Counter axis align start", "command": "counter align start"},
+    {"name": "Counter axis align end", "command": "counter align end"},
+    {"name": "Counter axis align center", "command": "counter align center"},
+
+    {"name": "Horizontal axis align start", "command": "horizontal align start"},
+    {"name": "Horizontal axis align end", "command": "horizontal align end"},
+    {"name": "Horizontal axis align center", "command": "horizontal align center"},
+
+    {"name": "Vertical axis align start", "command": "vertical align start"},
+    {"name": "Vertical axis align end", "command": "vertical align end"},
+    {"name": "Vertical axis align center", "command": "vertical align center"},
+
+    {"name": "Space between", "command": "space between"},
+    {"name": "Packed", "command": "packed"},
+
+    {"name": "Horizontal Fixed width", "command": "horizontal fixed"},
+    {"name": "Horizontal Hug contents", "command": "horizontal hug"},
+    {"name": "Horizontal Fill container", "command": "horizontal fill"},
+
+    {"name": "Vertical Fixed width", "command": "vertical fixed"},
+    {"name": "Vertical Hug contents", "command": "vertical hug"},
+    {"name": "Vertical Fill container", "command": "vertical fill"}
+  ]
+}
