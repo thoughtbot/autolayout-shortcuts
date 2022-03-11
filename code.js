@@ -172,7 +172,7 @@ function setHugContents(direction) {
 
 function setFixedSizing(direction) {
   figma.currentPage.selection.forEach(f => {
-    if (f.layoutMode !== "NONE") {
+    if (f.layoutMode && f.layoutMode !== "NONE") {
       if (f.layoutMode == direction) {
         f.primaryAxisSizingMode = "FIXED"
       } else {
