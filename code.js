@@ -160,12 +160,21 @@ function setHugContents(direction) {
     if (!al) return
 
     if (al.layoutMode == direction) {
+      if (al.parent.layoutMode == direction) {
+        al.layoutGrow = 0;
+      } else {
+        al.layoutAlign = "INHERIT";
+      }
+
       al.primaryAxisSizingMode = "AUTO"
-      al.primaryAxisAlignItems = "MIN"
-      al.layoutGrow = 0;
     } else {
+      if (al.parent.layoutMode == direction) {
+        al.layoutGrow = 0;
+      } else {
+        al.layoutAlign = "INHERIT";
+      }
+
       al.counterAxisSizingMode = "AUTO"
-      al.layoutGrow = 0;
     }
   })
 }
@@ -192,12 +201,13 @@ function setFixedSizing(direction) {
 
 function setFillContainer(direction) {
   figma.currentPage.selection.forEach(f => {
-    if (!f.parent.layoutMode) return
+    if (!f.parent.layoutMode || f.parent.layoutMode === "NONE") return
 
     if (f.parent.layoutMode == direction) {
       f.layoutGrow = 1;
     } else {
       f.layoutAlign = "STRETCH";
+      f.primaryAxisSizingMode = "FIXED";
     }
   })
 }
